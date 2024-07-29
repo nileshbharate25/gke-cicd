@@ -9,10 +9,10 @@ serialPipeline:
   stages:
   - targetId: dev
     # profiles:
-    # - dev
   # - targetId: staging
   #   profiles:
   #   - staging
   - targetId: prod
+    # - dev
   #   profiles:
-  #   - prod
+#   - prod
