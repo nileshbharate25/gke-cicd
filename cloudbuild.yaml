@@ -1,28 +1,28 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/quickstart-image', './app1' ]
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/quickstart-image', './app1']
   id: 'Build Docker Image'
 
+- name: 'gcr.io/cloud-builders/docker'
   # images:
   # - 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/quickstart-image'
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/quickstart-image' ]
+  args: ['push', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/quickstart-image']
   id: 'Push Docker Image'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/flask-image', './app2' ]
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/flask-image', './app2']
   id: 'Build Docker Image2'
 
+- name: 'gcr.io/cloud-builders/docker'
   # images:
   # - 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/quickstart-image'
 
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/flask-image' ]
+  args: ['push', 'us-central1-docker.pkg.dev/key-period-428816-e8/gke-repo/flask-image']
   id: 'Push Docker Image2'
 
-
 - name: 'google/cloud-sdk:latest'
+
   entrypoint: 'sh'
   args:
   - -xe
